@@ -3,6 +3,7 @@ package org.example.service;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.example.entities.UserInfo;
+import org.example.model.UserInfoDto;
 import org.example.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
