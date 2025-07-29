@@ -24,6 +24,9 @@ public class RefreshTokenService {
         UserInfo userInfoExtracted = userRepository.findByUsername(username);
         RefreshToken refreshToken = RefreshToken.builder()
                 .userInfo(userInfoExtracted)
+
+
+
                 .token(UUID.randomUUID().toString())
                 .expiryDate(Instant.now().plusMillis(600000))
                 .build();
