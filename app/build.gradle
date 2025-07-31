@@ -1,10 +1,16 @@
 plugins {
-    id 'application'
-    id 'java'
-    id 'org.springframework.boot' version '3.2.2'
+    id 'org.springframework.boot' version '3.2.2' // ✅ Keep the correct version
     id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'java'
+    id 'application'
     id 'org.jetbrains.kotlin.jvm'
 }
+
+version = '0.1.0' // ✅ Correct location for project version
+bootJar {
+    enabled = true
+}
+
 
 repositories {
     mavenCentral()
@@ -42,6 +48,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testCompileOnly 'org.projectlombok:lombok'
     testAnnotationProcessor 'org.projectlombok:lombok'
+
 }
 
 java {
@@ -54,4 +61,7 @@ java {
 }
 application {
     mainClass = 'authservice.App'
+}
+bootJar {
+    mainClass = 'org.example.App'  // use the fully qualified name
 }
